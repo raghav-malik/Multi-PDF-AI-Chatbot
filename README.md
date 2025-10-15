@@ -138,20 +138,3 @@ OPENAI_API_KEY=your_openai_api_key
 
 ---
 
-## 🧩 Future Enhancements
-
-- 🔹 Persistent FAISS database (retain embeddings across restarts)  
-- 🔹 OCR support for scanned PDFs (using Tesseract or Unstructured)  
-- 🔹 User authentication and saved sessions  
-- 🔹 Cloud deployment (Vercel + Render)  
-- 🔹 Multi-user conversation handling  
-
----
-
-## 🧠 Resume-Ready Highlights
-
-- Built a **full-stack AI-powered document search chatbot** using **LangChain, FastAPI, and OpenAI GPT**.  
-- Implemented **Retrieval-Augmented Generation (RAG)** with **FAISS** for semantic context retrieval.  
-- Enabled **multi-PDF understanding and contextual Q&A** using embeddings and memory.  
-- Designed an intuitive **React + Tailwind** frontend for real-time chat interaction.  
-
