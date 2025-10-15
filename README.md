@@ -155,16 +155,3 @@ OPENAI_API_KEY=your_openai_api_key
 - Enabled **multi-PDF understanding and contextual Q&A** using embeddings and memory.  
 - Designed an intuitive **React + Tailwind** frontend for real-time chat interaction.  
 
----
-
-## 🧑‍💻 Author
-
-**Raghav Malik**  
-🎓 B.Tech CSE | AI & Blockchain Enthusiast | Machine Learning Quant Aspirant  
-📧 [your-email@example.com]  
-🔗 [LinkedIn Profile](https://linkedin.com/in/your-linkedin)  
-🔗 [GitHub](https://github.com/your-username)
-
----
-
-⭐ *If you like this project, consider giving it a star on GitHub!*
