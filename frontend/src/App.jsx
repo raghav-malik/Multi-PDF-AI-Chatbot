@@ -29,16 +29,17 @@ export default function App() {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/upload-pdfs/", formData, {
-  headers: { "Content-Type": "multipart/form-data" },
-});
+      await axios.post(
+        "https://multi-pdf-ai-chatbot-3.onrender.com/upload-pdfs/",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
 
       setPdfUploaded(true);
-      const successMsg = {
-        sender: "bot",
-        text: `✅ ${files.length} new PDF(s) added! You can now ask about all uploaded documents.`,
-      };
-      setMessages((prev) => [...prev, successMsg]);
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: `✅ ${files.length} new PDF(s) added! You can now ask about all uploaded documents.` },
+      ]);
     } catch (err) {
       console.error(err);
       setMessages((prev) => [
@@ -72,9 +73,13 @@ export default function App() {
       const formData = new FormData();
       formData.append("query", input);
 
-      const res = await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/chat/", { query });
-      const answer = res.data.answer || "No response from AI.";
+      const res = await axios.post(
+        "https://multi-pdf-ai-chatbot-3.onrender.com/chat/",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
 
+      const answer = res.data.answer || "No response from AI.";
       setMessages((prev) => [...prev, { sender: "bot", text: answer }]);
     } catch (err) {
       console.error("Chat error:", err);
@@ -118,8 +123,6 @@ export default function App() {
         </button>
       </div>
 
-      
-
       <div
         id="chat-box"
         className="w-full max-w-2xl h-[70vh] bg-gray-800 rounded-lg p-4 overflow-y-auto shadow-lg mb-4"
@@ -144,7 +147,7 @@ export default function App() {
         ))}
 
         {loading && (
-          <div className="text-gray-400 italic mt-2">Bot is thinking...</div>
+          <div className="text-gray-400 italic mt-2">🤖 Bot is thinking...</div>
         )}
       </div>
 
