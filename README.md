@@ -1,4 +1,4 @@
-# 🧠 AI Document Search Chatbot
+#  AI Document Search Chatbot
 
 An **AI-powered multi-PDF search assistant** that lets you upload one or more PDFs and ask natural language questions about their contents.  
 This project uses a **Retrieval-Augmented Generation (RAG)** pipeline — combining **LangChain**, **OpenAI GPT**, and **FAISS** for intelligent document understanding.
