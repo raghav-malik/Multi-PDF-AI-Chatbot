@@ -17,17 +17,21 @@ export default function ChatBox() {
 
     try {
       const formData = new FormData();
-      formData.append("query", userMsg.user);
+      formData.append("query", query);
 
-      const res = await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/chat/", { query });
+      const res = await axios.post(
+        "https://multi-pdf-ai-chatbot-3.onrender.com/chat/",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
       const answer = res.data.answer || "No response from AI.";
-
       setMessages((prev) =>
         prev.map((m, i) => (i === prev.length - 1 ? { ...m, bot: answer } : m))
       );
     } catch (error) {
       console.error(error);
-      alert("❌ Chat failed. Check your backend.");
+      alert("❌ Chat failed. Check your backend or network.");
     } finally {
       setLoading(false);
     }
