@@ -29,9 +29,9 @@ export default function App() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://127.0.0.1:8000/upload-pdfs/", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const res = await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/upload-pdfs/", formData, {
+  headers: { "Content-Type": "multipart/form-data" },
+});
 
       setPdfUploaded(true);
       const successMsg = {
