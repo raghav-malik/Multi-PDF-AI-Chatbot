@@ -13,7 +13,9 @@ export default function FileUpload() {
     formData.append("file", file);
 
     try {
-      await axios.post("http://127.0.0.1:8000/upload-pdf/", formData);
+      await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/upload-pdfs/", formData, {
+  headers: { "Content-Type": "multipart/form-data" },
+});
       alert("✅ PDF processed successfully!");
     } catch (error) {
       console.error(error);
