@@ -72,7 +72,7 @@ export default function App() {
       const formData = new FormData();
       formData.append("query", input);
 
-      const res = await axios.post("http://127.0.0.1:8000/chat/", formData);
+      const res = await axios.post("https://multi-pdf-ai-chatbot-3.onrender.com/chat/", { query });
       const answer = res.data.answer || "No response from AI.";
 
       setMessages((prev) => [...prev, { sender: "bot", text: answer }]);
