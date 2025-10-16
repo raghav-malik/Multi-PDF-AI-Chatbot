@@ -25,6 +25,14 @@ vector_db = None
 chat_memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 chat_chain = None
 
+@app.get("/")
+def root():
+    return {"message": "✅ Multi-PDF AI Chatbot Backend is running successfully!"}
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
 
 @app.post("/upload-pdfs/")
 async def upload_pdfs(files: list[UploadFile]):
