@@ -43,4 +43,6 @@ urllib3==2.2.3
 uvicorn==0.30.6
 zstandard==0.21.0
 cffi==1.16.0
+python-multipart==0.0.9
+
 
